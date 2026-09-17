@@ -11,13 +11,27 @@ public class Quadratic {
 		b = scanner.nextDouble();
 		System.out.println("Give the value for c:");
 		c = scanner.nextDouble();
-		if((Math.pow(b,2)-4*a*c)<0) System.out.println("There is no answer");
-		else if((Math.pow(b,2)-4*a*c)==0) {
-			System.out.printf("x=%.2f",quadratic1(a,b,c));
+		if (a == 0) {
+			if (b == 0) {
+				if (c == 0) {
+					System.out.println("There are infinitely many answers");
+				} else {
+					System.out.println("There is no answer");
+				}
+			} else {
+				System.out.printf("x=%.2f", -c / b);
 			}
-		 else{
-			System.out.printf("x=%.2f and %.2f", quadratic1(a,b,c), quadratic2(a,b,c));
-			}	
+		}
+		else if ((Math.pow(b, 2) - 4 * a * c) < 0) {
+			System.out.println("There is no answer");
+		}
+		else if ((Math.pow(b, 2) - 4 * a * c) == 0) {
+			System.out.printf("x=%.2f", quadratic1(a, b, c));
+		}
+		else {
+			System.out.printf("x=%.2f and %.2f",
+				quadratic1(a, b, c), quadratic2(a, b, c));
+		}
 		
 		}
 	public static double quadratic1(double a, double b, double c)	{
