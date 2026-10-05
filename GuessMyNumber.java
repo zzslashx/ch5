@@ -6,29 +6,33 @@ public class GuessMyNumber{
 		
 		Scanner scanner = new Scanner(System.in);
 		Random random = new Random();
-	
+		int guesses=0;
         int number = random.nextInt(100) + 1;
         int guess=0;
         int amountOff =  Math.abs(number - guess);
 		System.out.println("I'm thinking of a number between 1 and 100(inclusive) Can you guess what it is?");
 		
-		while(amountOff>0){
-			
+		while(amountOff>0 && guesses<3){
 	
 		System.out.print("Type a number: \n");	
 		guess = scanner.nextInt();
-		System.out.println("Your guess is: " + guess);
-			amountOff = Math.abs(number - guess);
-		if(guess>number){
+		guesses++;
+		//if(guesses==3) break;
+		System.out.println("Your guess is: " + guess);	
+		amountOff = Math.abs(number - guess);
+		if(guess>number){	
 			System.out.println("too high! try again");
 			}
 		if(guess<number){
+		
 			System.out.println("Too low! Try again");
 			}
 		if(guess==number){
+			
 			System.out.println("you're right! you guess it!");
 			}
-	}	
+	}
+	System.out.println("The answer was: " + number);	
 		
 	}
 }
