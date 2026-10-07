@@ -12,12 +12,12 @@ public class GuessMyNumber{
         int amountOff =  Math.abs(number - guess);
 		System.out.println("I'm thinking of a number between 1 and 100(inclusive) Can you guess what it is?");
 		
-		while(amountOff>0 && guesses<3){
+		while(amountOff>0){
 	
 		System.out.print("Type a number: \n");	
 		guess = scanner.nextInt();
 		guesses++;
-		//if(guesses==3) break;
+		if(guesses==3) break;
 		System.out.println("Your guess is: " + guess);	
 		amountOff = Math.abs(number - guess);
 		if(guess>number){	
